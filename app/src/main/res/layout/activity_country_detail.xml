@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   tools:context=".view.countrydetail.CountryDetailActivity"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <include layout="@layout/country_header"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:id="@+id/frame"
+             app:layout_constraintStart_toStartOf="parent"
+
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent"/>
+
+    <fragment
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/map"
+            tools:context=".view.countrydetail.CountryDetailActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/country_info"/>
+
+    <include layout="@layout/country_info"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             app:layout_constraintTop_toBottomOf="@id/map"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"
+             android:id="@+id/country_info"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
